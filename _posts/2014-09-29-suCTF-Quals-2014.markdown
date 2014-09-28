@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "SUCTF-2014 Quals Write up - Part I"
+date:   2014-09-29 01:13:17
+categories: ctf-writeups 
+author: sushant
+---
+
+## What is this? (20 points)
+This was a pretty simple question. Use [StegSolve](http://www.caesum.com/handbook/Stegsolve.jar) to open up one of the images and then merge it with the other image (equivalent to XORing the pixels of the two images).
+
+```
+java -jar <link to StegSolve.jar>
+```
+
+![AzadiTower]({{site.url}}/assets/AzadiTower.png)
+
+`flag: Azadi Tower`
+
+## Rolling Hashes (40 points)
+A question based on reversing a hashing function. On further analysis of the given python code we were able to identify that the mod value(10^30) was not critical in reversing the function(as max value would be below that always). Also the flag is given to be 9 characters long.
+
+After this writing a simple python code to reverse the function was easy.
+{% gist karthiksenthil/10fed157719877e7a2c3 %}
+
+`flag : Good Luck`
+
